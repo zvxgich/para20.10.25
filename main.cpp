@@ -8,6 +8,8 @@ void output(const int* const* m, size_t rows, size_t cols);
 int main()
 {
     size_t rows = 0, cols = 0;
+
+    std::cout << "Введите количество строк и столбцов матрицы\n";
     std::cin >> rows >> cols;
     if (!std::cin) {
         return 1;
@@ -21,6 +23,7 @@ int main()
         return 2;
     }
 
+    std::cout << "Введите элементы матрицы построчно\n";
     for (size_t i = 0; i < rows && std::cin; ++i) {
         for (size_t j = 0; j < cols && std::cin; ++j) {
             std::cin >> m[i][j];
@@ -32,6 +35,7 @@ int main()
         return 1;
     }
 
+    std::cout << "Ваша матрица\n";
     output(m, rows, cols);
 
     remove(m, rows, cols);
